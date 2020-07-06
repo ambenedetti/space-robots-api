@@ -45,7 +45,7 @@ class Api::V1::RobotsController < ApplicationController
   private
 
   def robot_params
-    params.require(:robot).permit(:name, :type, :serial_number)
+    params.require(:robot).permit(:name, :robot_type, :serial_number)
   end
 
   def set_robot
