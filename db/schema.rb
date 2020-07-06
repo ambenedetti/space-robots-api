@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_122046) do
+ActiveRecord::Schema.define(version: 2020_07_06_125445) do
 
   create_table "armors", force: :cascade do |t|
-    t.string "type"
+    t.string "armor_type"
     t.integer "robot_id", null: false
     t.string "serial_number"
     t.datetime "created_at", precision: 6, null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_122046) do
   end
 
   create_table "robots", force: :cascade do |t|
-    t.string "type"
+    t.string "robot_type"
     t.string "name"
     t.string "serial_number"
     t.datetime "created_at", precision: 6, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_122046) do
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.string "type"
+    t.string "weapon_type"
     t.integer "robot_id", null: false
     t.string "serial_number"
     t.datetime "created_at", precision: 6, null: false
