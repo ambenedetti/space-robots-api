@@ -4,7 +4,8 @@ class Api::V1::RobotsController < ApplicationController
   def index
     @robots = Robot.all
     @robots = Robot.where(name: params[:name]) if params[:name]
-    @robots = Robot.joins(:weapons).where(weapons: { name: params[:weapon] }) if params[:weapon]
+    @robots = Robot.joins(:weapons).where(weapons: { weapon_type: params[:weapon] }) if params[:weapon]
+    @robots = Robot.joins(:armors).where(armors: { armor_type: params[:armor] }) if params[:armor]
     render json: @robots
   end
 

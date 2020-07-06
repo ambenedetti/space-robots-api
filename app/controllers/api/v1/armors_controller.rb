@@ -21,7 +21,7 @@ class Api::V1::ArmorsController < ApplicationController
 
   def update
     @robot = Robot.find(params[:robot_id])
-    @armor = @armor.weapons.find(params[:id])
+    @armor = @robot.armors.find(params[:id])
     if @armor
       @armor.update(armor_params)
       render json: { message: "Armor updated" }, status: 200
